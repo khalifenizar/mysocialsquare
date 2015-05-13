@@ -8,4 +8,6 @@ get '/' =>'users#social_network_signup'
 get '/twitter' => 'users#twitter_authenticate'
 
 get '/oauth_result' => 'users#oauth_result'
+
+get 'posts' => 'posts#index'
 end

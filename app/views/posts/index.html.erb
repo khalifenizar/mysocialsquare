@@ -1,0 +1,27 @@
+<h1>My Social Square</h1>
+
+<ol>
+<% @posts.each do |post| %>
+  <li>
+      <strong>TWITTER</strong>
+
+      <strong>@<%= post.user.screen_name %>:</strong>
+
+      <p><%= post.created_at %></p>
+
+          <% if post.media?%>
+          <img src="<%= post.media[0].media_url %>">
+          <% end %>
+
+      <p><%= post.text %></p>
+
+          <% if post.retweeted %>
+            <p>This post was retweeted</p>
+          <% else %>
+            <p>This post was NOT retweeted</p>
+          <% end %>
+
+      <br>
+    </li>
+<% end %>
+</ol>

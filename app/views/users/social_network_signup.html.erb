@@ -1,4 +1,11 @@
 <h1>social_network_signup</h1>
 
+<% if current_user.twitter_username %>
+  <p>Twitter account: @<%= current_user.twitter_username %></p>
+<% else %>
+  <a href="<%= twitter_path %>">Link My Twitter</a>
+<% end %>
+<br>
+<br>
 
-<a href="<%= twitter_path %>">Link My Twitter</a>
+<a href="/posts">Go to My Social Square profile</a>
