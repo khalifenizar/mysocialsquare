@@ -9,5 +9,5 @@ get '/twitter' => 'users#twitter_authenticate'
 
 get '/oauth_result' => 'users#oauth_result'
 
-get 'posts' => 'posts#index'
+get '/posts' => 'posts#post_home'
 end

@@ -13,7 +13,7 @@ def twitter_authenticate
   # Here is the URL i want the user to visit after they authorize.
   result_url = oauth_result_path(only_path: false)
 
-  # Please Twitter, can I have a URL for authenticating a user for my app.
+  # Twitter, can I have a URL for authenticating a user for my app?
   request_token = client.request_token(:oauth_callback => result_url)
 
   # Redirect the user to that URL.
