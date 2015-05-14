@@ -18,7 +18,7 @@
     <div class="col-md-11"></div>
     <div class="col-md-1">
 <% if current_user%>
-  <%= link_to "Logout", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 <% end %>
     </div>
   </div>
@@ -26,7 +26,7 @@
 
 <%= yield %>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application'%>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
