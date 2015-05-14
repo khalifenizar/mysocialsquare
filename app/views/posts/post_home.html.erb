@@ -1,29 +1,67 @@
-<h1>My Social Square</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>My Social Square</h1>
+  </div>
+  </div>
+</div>
 
-<% @posts.each do |post| %>
-<div class="post_divide">
-<ul>
-  <li>
-      <strong>TWITTER</strong>
+<% @posts.each do |day, post_day| %>
 
-      <strong>@<%= post.user.screen_name %>:</strong>
-
-      <p><%= post.created_at %></p>
-
-          <% if post.media?%>
-          <img src="<%= post.media[0].media_url %>">
-          <% end %>
-
-      <p><%= post.text %></p>
-
-          <% if post.retweeted %>
-            <p>This post was retweeted</p>
-          <% else %>
-            <p>This post was NOT retweeted</p>
-          <% end %>
-
-      <br>
-    </li>
-</ul>
+<div class="container post_divide">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h1>
+       <%= day %>
+      </h1><br>
+      <h2>
+        TWITTER
+      </h2>
     </div>
+  </div>
+
+
+    <br>
+    <br>
+
+
+
+    <ul>
+      <% post_day[:posts].each do |post| %>
+        <li>
+
+            <strong>@<%= post.user.screen_name %>:</strong>
+
+            <p><%= post.text %></p>
+                <%# Check if post has media (image or video/gif) %>
+                <div class="row">
+                  <div class="col-md-3">
+                    <% if post.media? %>
+                      <%# Show <video> tag if media is video) %>
+                      <% if post.media[0].class == Twitter::Media::AnimatedGif %>
+                        <video class="media_size" src="<%= post.media[0].video_info.variants[0].url %>" controls></video>
+                      <%# Otherwise show a regular <img> %>
+                      <% else %>
+                        <img class="media_size" src="<%= post.media[0].media_url %>">
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
 <% end %>

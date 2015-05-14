@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'figaro'
+
 gem 'twitter_oauth'
 
 gem 'twitter'
