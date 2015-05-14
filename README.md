@@ -16,11 +16,11 @@
 <h3>Dependencies</h3>
 
   <ul>
-    <li>Rails<li>
-    <li>Devise Gem<li>
-    <li>Boostrap<li>
-    <li>Oauth<li>
-  <ul>
+    <li>Rails</li>
+    <li>Devise Gem</li>
+    <li>Boostrap</li>
+    <li>Oauth</li>
+  </ul>
 
 <h3>Contributing</h3>
 
