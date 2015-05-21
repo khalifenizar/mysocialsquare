@@ -1,4 +1,3 @@
-<script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -77,4 +76,3 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-</script>
